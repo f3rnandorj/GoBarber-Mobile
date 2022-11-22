@@ -3,10 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector } from 'react-redux';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +38,16 @@ function Routes() {
           options={{
             title: 'Agendamentos',
             tabBarLabel: 'Agendamentos',
+            tabBarIcon: () => <Icon name="event" size={20} color="#fff" />,
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            title: 'Agendamentos',
+            tabBarLabel: 'Meu perfil',
+            tabBarIcon: () => <Icon name="person" size={20} color="#fff" />,
           }}
         />
       </Tab.Navigator>
