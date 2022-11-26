@@ -10,6 +10,12 @@ import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 
+import SelectProvider from './pages/New/SelectProvider';
+import SelectDateTime from './pages/New/SelectDateTime';
+import Confirm from './pages/New/Confirm';
+
+import { TouchableOpacity } from 'react-native';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -41,6 +47,39 @@ function Routes() {
             tabBarIcon: () => <Icon name="event" size={20} color="#fff" />,
           }}
         />
+
+        <Tab.Screen
+          name="New"
+          component={SelectProvider}
+          options={({ navigation }) => ({
+            title: 'Selecione o prestador',
+            tabBarLabel: 'Agendar',
+            headerTransparent: true,
+            headerTintColor: '#FFF',
+            headerLeftContainerStyle: {
+              marginLeft: 20,
+            },
+            tabBarStyle: { display: 'none' },
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Dashboard');
+                }}
+              >
+                <Icon name="chevron-left" size={20} color="#FFF" />
+              </TouchableOpacity>
+            ),
+
+            tabBarIcon: () => (
+              <Icon
+                name="add-circle-outline"
+                size={20}
+                color="rgba(255,255,255,0.6)"
+              />
+            ),
+          })}
+        />
+
         <Tab.Screen
           name="Profile"
           component={Profile}
@@ -63,6 +102,33 @@ function Routes() {
               name="Tabs"
               component={Tabs}
               options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+              name="SelectDateTime"
+              component={SelectDateTime}
+              options={({ navigation }) => ({
+                title: 'Selecione o horário',
+                headerTitleAlign: 'center',
+                headerBackTitleVisible: false,
+                headerStyle: {
+                  backgroundColor: '#7159c1',
+                },
+                headerTintColor: '#FFF',
+                headerTransparent: true,
+                headerLeftContainerStyle: {
+                  marginLeft: 20,
+                },
+                headerLeft: () => (
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  >
+                    <Icon name="chevron-left" size={20} color="#FFF" />
+                  </TouchableOpacity>
+                ),
+              })}
             />
           </Stack.Navigator>
         </>
