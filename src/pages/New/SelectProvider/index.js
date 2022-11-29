@@ -34,7 +34,7 @@ export default function SelectProvider({ navigation }) {
               <Avatar
                 source={{
                   uri: provider.avatar
-                    ? provider.avatar.url.replace('localhost', '192.168.1.87')
+                    ? provider.avatar.url.replace('localhost', 'coloque seu ip')
                     : `https://http2.mlstatic.com/D_NQ_NP_734195-MLB45786548402_052021-O/${provider.name}.jpg`,
                 }}
               />

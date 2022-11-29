@@ -31,8 +31,8 @@ export default function Confirm({ route, navigation }) {
         <Avatar
           source={{
             uri: provider.avatar
-              ? provider.avatar.url.replace('localhost', '192.168.1.87')
-              : `https://i.ibb.co/fnZY4Nc/244412150-4339573332789091-124622265567051095-n-Copia.jpg`,
+              ? provider.avatar.url.replace('localhost', 'coloque seu ip')
+              : `https://http2.mlstatic.com/D_NQ_NP_734195-MLB45786548402_052021-O/${provider.name}.jpg`,
           }}
         />
         <Name>{provider.name}</Name>
