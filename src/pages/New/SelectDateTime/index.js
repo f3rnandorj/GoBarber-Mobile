@@ -36,7 +36,7 @@ export default function SelectDateTime({ route, navigation }) {
   return (
     <Background>
       <Container>
-        <DateInput date={date} onChange={setDate} />
+        <DateInput date={date} setDate={setDate} />
 
         <HourList
           data={hours}
