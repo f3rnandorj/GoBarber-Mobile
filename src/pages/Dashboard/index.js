@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import api from '~/services/api';
-import Background from '~/components/Background';
-import Appointment from '~/components/Appointment';
+import api from '../../services/api';
+
+import Background from '../../components/Background';
+import Appointment from '../../components/Appointment';
 
 import { Container, List } from './styles';
 

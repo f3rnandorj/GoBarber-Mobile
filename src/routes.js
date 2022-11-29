@@ -130,6 +130,33 @@ function Routes() {
                 ),
               })}
             />
+
+            <Stack.Screen
+              name="Confirm"
+              component={Confirm}
+              options={({ navigation }) => ({
+                title: 'Confirmar agendamento',
+                headerTitleAlign: 'center',
+                headerBackTitleVisible: false,
+                headerStyle: {
+                  backgroundColor: '#7159c1',
+                },
+                headerTintColor: '#FFF',
+                headerTransparent: true,
+                headerLeftContainerStyle: {
+                  marginLeft: 20,
+                },
+                headerLeft: () => (
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  >
+                    <Icon name="chevron-left" size={20} color="#FFF" />
+                  </TouchableOpacity>
+                ),
+              })}
+            />
           </Stack.Navigator>
         </>
       ) : (
